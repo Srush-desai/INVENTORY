@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Retail Inventory</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="hero">
+        <!-- Navbar -->
+        <div class="nav">
+            <h2>SmartRetail</h2>
+            <a href="#features" class="open-btn">Explore Features</a>
+        </div>
+
+        <!-- Center Content -->
+        <div class="center-content">
+            <img src="{{ url_for('static', filename='card_mockup.png') }}" class="mockup" alt="Smart Retail Card">
+            <h1>The era of one-size-fits-all inventory is over</h1>
+            <p class="tagline">AI-powered demand forecasting, smart segmentation & optimized inventory at your fingertips.</p>
+
+            <div class="button-group">
+                <form action="/segment" method="post">
+                    <button type="submit">🧠 Customer Segmentation</button>
+                </form>
+                <form action="/distribute" method="post">
+                    <button type="submit">📦 Inventory Distribution</button>
+                </form>
+                <form action="/forecast" method="get">
+                    <button type="submit">🔮 Demand Forecasting</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Description Section -->
+        <div class="description" id="features">
+            <h2>About the Project</h2>
+            <p>
+                <strong>Smart Retail Inventory Optimization</strong> is a machine learning-powered web platform designed to help modern retail stores eliminate inventory inefficiencies and enhance customer satisfaction.
+            </p>
+            <ul>
+                <li><strong>🔮 Demand Forecasting:</strong> Predict product sales using linear regression.</li>
+                <li><strong>🧠 Customer Segmentation:</strong> Discover shopping patterns using K-Means clustering.</li>
+                <li><strong>📦 Inventory Distribution:</strong> Recommend product quantities for each store using Random Forest.</li>
+            </ul>
+            <p>
+                This system empowers retailers to reduce overstocking, prevent shortages, and align supply with real-time consumer behavior.
+            </p>
+        </div>
+    </div>
+</body>
+</html>

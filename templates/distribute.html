@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inventory Distribution Results</title>
+    <style>
+        body {
+            background-color: #0d0d0d;
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 18px;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #ffd700;
+            text-align: center;
+        }
+
+        .tagline {
+            text-align: center;
+            font-size: 20px;
+            margin-top: 10px;
+            color: #cccccc;
+        }
+
+        .table-container {
+            margin-top: 40px;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #111;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.04);
+            color: white;
+            font-size: 16px;
+        }
+
+        th, td {
+            padding: 14px;
+            border: 1px solid #333;
+            text-align: center;
+        }
+
+        thead {
+            background-color: #222;
+            color: #ffd700;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #1a1a1a;
+        }
+
+        tbody tr:hover {
+            background-color: #2a2a2a;
+        }
+
+        .section {
+            margin-top: 60px;
+        }
+
+        .section h2 {
+            color: #ffa500;
+            font-size: 28px;
+            border-bottom: 2px solid #444;
+            padding-bottom: 6px;
+        }
+
+        .section p, li {
+            color: #dddddd;
+            line-height: 1.6;
+        }
+
+        .back-link {
+            display: block;
+            width: fit-content;
+            margin: 40px auto;
+            text-align: center;
+            padding: 12px 24px;
+            background-color: #ffd700;
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-link:hover {
+            background-color: #e6c200;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📦 Inventory Distribution</h1>
+        <p class="tagline">Optimizing stock across stores using Random Forest model</p>
+     <div class="section">
+            <h2>🔍 Project Overview</h2>
+            <p>
+                Retail stores often struggle with overstocking or understocking. This project uses machine learning to make smarter decisions regarding inventory placement, customer segmentation, and sales forecasting.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>🎯 Objective: Inventory Optimization</h2>
+            <ul>
+                <li><strong>Model Used:</strong> Random Forest Regressor</li>
+                <li><strong>Input Features:</strong> Store ID, Product ID, Month</li>
+                <li><strong>Target:</strong> Predicted Units to stock</li>
+            </ul>
+            <p>
+                This helps ensure each store has the right quantity of stock based on local sales history and seasonality.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>📁 Dataset Info</h2>
+            <ul>
+                <li><strong>Columns:</strong> Date, Store ID, Product ID, Units Sold</li>
+                <li><strong>Preprocessing:</strong> Cleaned IDs, extracted month from date, aggregated units sold</li>
+                <li><strong>Rows:</strong> {{ tables[0].count('\n') - 2 }} records displayed</li>
+            </ul>
+        </div>
+
+        <a href="/" class="back-link">⬅ Back to Home</a>
+    
+
+        <div class="table-container">
+            {{ tables[0]|safe }}
+        </div>
+
+       
+    </div>
+</body>
+</html>

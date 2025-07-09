@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Segmentation Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body {
+            background-color: #0d0d0d;
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 18px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .hero {
+            padding: 40px 20px;
+        }
+
+        .center-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 40px;
+            color: #ffd700;
+            text-align: center;
+        }
+
+        .tagline {
+            text-align: center;
+            font-size: 20px;
+            margin-top: 10px;
+            color: #cccccc;
+        }
+
+        h2 {
+            font-size: 28px;
+            color: #ffa500;
+            margin-top: 40px;
+            border-bottom: 2px solid #444;
+            padding-bottom: 8px;
+        }
+
+        p, li {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #dddddd;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        .table-container {
+            margin-top: 30px;
+            overflow-x: auto;
+        }
+
+        .table-container table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 16px;
+            background-color: #111;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.04);
+            color: white;
+        }
+
+        .table-container th, .table-container td {
+            padding: 14px;
+            border: 1px solid #333;
+            text-align: center;
+        }
+
+        .table-container thead {
+            background-color: #222;
+            color: #ffd700;
+        }
+
+        .table-container tbody tr:nth-child(even) {
+            background-color: #1a1a1a;
+        }
+
+        .table-container tbody tr:hover {
+            background-color: #2a2a2a;
+        }
+
+        .open-btn {
+            display: inline-block;
+            margin-top: 40px;
+            background-color: #ffd700;
+            color: #000;
+            padding: 12px 24px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+        .open-btn:hover {
+            background-color: #e6c200;
+        }
+
+        .description {
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="center-content">
+            <h1>🧠 Customer Segmentation Results</h1>
+            <p class="tagline">Grouped customers using K-Means Clustering based on Income & Spending Score</p>
+
+            <!-- Segmentation Table -->
+            <div class="table-container">
+                {{ tables[0]|safe }}
+            </div>
+
+            <!-- Dataset Section -->
+            <div class="description">
+                <h2>📊 About the Dataset</h2>
+                <p>
+                    The dataset used is <strong>Mall_Customers.csv</strong> consisting of 200 entries from a mall. It includes:
+                </p>
+                <ul>
+                    <li><strong>CustomerID</strong> – Unique identifier</li>
+                    <li><strong>Gender</strong>, <strong>Age</strong></li>
+                    <li><strong>Annual Income (k$)</strong></li>
+                    <li><strong>Spending Score (1–100)</strong> – Assigned by the mall based on customer behavior</li>
+                </ul>
+
+                <h2>🔍 What We Did</h2>
+                <p>
+                    We applied <strong>K-Means Clustering</strong> (an unsupervised learning algorithm) using <code>scikit-learn</code> to group customers based on:
+                </p>
+                <ul>
+                    <li>📈 Annual Income</li>
+                    <li>💳 Spending Score</li>
+                </ul>
+                <p>
+                    These clusters help businesses identify and target specific customer segments like budget buyers, premium spenders, and average shoppers.
+                </p>
+
+                <h2>🛠 Technologies Used</h2>
+                <ul>
+                    <li>🧠 <strong>Machine Learning:</strong> K-Means (Scikit-learn)</li>
+                    <li>🐍 <strong>Backend:</strong> Python + Flask</li>
+                    <li>📊 <strong>Data Handling:</strong> Pandas, CSV files</li>
+                    <li>🎨 <strong>Frontend:</strong> HTML + CSS (Dark Mode)</li>
+                </ul>
+            </div>
+
+            <a href="/" class="open-btn">⬅ Back to Home</a>
+        </div>
+    </div>
+</body>
+</html>
+
